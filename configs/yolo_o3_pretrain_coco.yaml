@@ -1,0 +1,58 @@
+task: detect
+mode: train
+
+# -----------------------------
+# DATA & MODEL
+# -----------------------------
+data: configs/coco_local.yaml                 # COCO dataset
+model: models/yolo_o3_v3.yaml
+pretrained: False               # IMPORTANT (true pretraining)
+
+# -----------------------------
+# TRAINING
+# -----------------------------
+epochs: 100                    # enough for generic features
+batch: 32                       # if GPU allows (4070 SUPER should)
+imgsz: 640
+
+optimizer: SGD
+lr0: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+cos_lr: True
+
+freeze: 0                       # train full network
+
+# -----------------------------
+# LOSSES (generic)
+# -----------------------------
+cls: 0.5                        # lower than fruit training
+box: 7.5
+dfl: 1.5
+iou: 0.25
+
+patience: 50
+
+# -----------------------------
+# AUGMENTATION (moderate)
+# -----------------------------
+augment: True
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+fliplr: 0.5
+translate: 0.1
+scale: 0.5
+degrees: 0.0
+shear: 0.0
+perspective: 0.0
+erasing: 0.2                  # LOWER than fruit stage
+
+mosaic: 1.0
+mixup: 0.0
+copy_paste: 0.0
+
+val: True
+plots: True
+device: 0
+workers: 8

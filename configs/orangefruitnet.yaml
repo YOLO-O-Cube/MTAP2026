@@ -1,0 +1,19 @@
+# ================================
+# OrangeFruitNet Dataset YAML
+# Multi-Stage Phenological Detection
+# ================================
+
+path: C:/Users/Admin/yolo_o3/data/orangefruitnet   # dataset root directory
+
+train: images/train
+val: images/val
+test: images/test
+
+# Number of classes
+nc: 3
+
+# Phenological classes
+names:
+  0: flower
+  1: green orange
+  2: orange

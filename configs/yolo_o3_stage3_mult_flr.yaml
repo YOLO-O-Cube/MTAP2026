@@ -1,0 +1,79 @@
+# =========================================================
+# YOLO-O³ Stage-3: Final Multi-Class Fine-Tuning
+# Purpose: Inter-class discrimination with
+# P4-biased flower-sensitive refinement
+#
+# Command:
+# yolo detect train model=models/yolo_o3_v2_flr.yaml weights=models/yolo_o3_coco_best.pt cfg=configs/yolo_o3_stage3_mult_flr.yaml
+# =========================================================
+
+task: detect
+mode: train
+
+# -------------------------
+# Dataset
+# -------------------------
+data: configs/orangefruitnet.yaml   # nc=3
+
+# -------------------------
+# Training Schedule
+# -------------------------
+epochs: 400
+batch: 32
+imgsz: 640
+patience: 120
+
+# -------------------------
+# Optimizer
+# -------------------------
+optimizer: SGD
+lr0: 0.003
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+
+# -------------------------
+# Augmentations
+# (Flower-sensitive, no semantic destruction)
+# -------------------------
+mosaic: 0.5
+close_mosaic: 15
+mixup: 0.0
+copy_paste: 0.0
+
+hsv_h: 0.01
+hsv_s: 0.5
+hsv_v: 0.4
+degrees: 0.0
+translate: 0.05
+scale: 0.4
+shear: 0.0
+fliplr: 0.5
+flipud: 0.0
+
+# -------------------------
+# Loss Balancing
+# -------------------------
+box: 7.5
+cls: 1.0
+dfl: 1.5
+
+# -------------------------
+# Regularization
+# -------------------------
+label_smoothing: 0.05
+dropout: 0.0
+
+# -------------------------
+# Freeze Strategy (IMPORTANT)
+# Freeze backbone + early neck, let P4_flower learn
+# -------------------------
+freeze: [0,1,2,3,4,5,6,7,8,9]
+
+# -------------------------
+# Misc
+# -------------------------
+workers: 8
+amp: true
+seed: 0
+verbose: true

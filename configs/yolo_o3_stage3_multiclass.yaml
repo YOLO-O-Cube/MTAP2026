@@ -1,0 +1,79 @@
+# =========================================================
+# YOLO-O³ Stage-3: Final Multi-Class Fine-Tuning
+# Purpose: Learn inter-class discrimination with fruit-specialized backbone
+# =========================================================
+
+task: detect
+mode: train
+
+# -------------------------
+# Dataset
+# -------------------------
+data: configs/orangefruitnet.yaml   # nc=3
+
+# -------------------------
+# Model
+# -------------------------
+model: models/yolo_o3_coco_best.pt  #use pretarined weights from stage 2
+pretrained: false
+
+# -------------------------
+# Training Schedule
+# -------------------------
+epochs: 500
+batch: 32
+imgsz: 640
+patience: 100
+
+# -------------------------
+# Optimizer
+# -------------------------
+optimizer: SGD
+lr0: 0.003              # LOWER LR for fine discrimination
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+
+# -------------------------
+# Augmentations (Reduced to preserve class cues)
+# -------------------------
+mosaic: 0.5
+close_mosaic: 15
+mixup: 0.0
+copy_paste: 0.0
+
+hsv_h: 0.01
+hsv_s: 0.5
+hsv_v: 0.4
+degrees: 0.0
+translate: 0.05
+scale: 0.4
+shear: 0.0
+fliplr: 0.5
+flipud: 0.0
+
+# -------------------------
+# Loss Balancing
+# -------------------------
+box: 7.5
+cls: 1.0                # full weight for class separation
+dfl: 1.5
+
+# -------------------------
+# Regularization
+# -------------------------
+label_smoothing: 0.05
+dropout: 0.0
+
+# -------------------------
+# Freeze Strategy (Optional but Recommended)
+# -------------------------
+freeze: 10              # freeze backbone+early neck for first ~10 epochs
+
+# -------------------------
+# Misc
+# -------------------------
+workers: 8
+amp: true
+seed: 0
+verbose: true

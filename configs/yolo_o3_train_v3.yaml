@@ -1,0 +1,59 @@
+task: detect
+mode: train
+
+# -----------------------------
+# DATA & MODEL
+# yolo detect train cfg=configs/yolo_o3_train_v3.yaml name=YOLO_O3_V3_OrangeFruitNet device=0
+# -----------------------------
+data: configs/orangefruitnet.yaml
+model: models/yolo_o3_v3_coco_best.pt   # 🔥 COCO pretrained
+pretrained: True
+
+# -----------------------------
+# TRAINING
+# -----------------------------
+epochs: 350                   # less than 350 now
+batch: 16
+imgsz: 640
+
+optimizer: SGD
+lr0: 0.003                     # 🔴 LOWER LR (CRITICAL)
+momentum: 0.937
+weight_decay: 0.0005
+cos_lr: True
+
+freeze: 10                     # 🔥 freeze early backbone
+
+# -----------------------------
+# LOSSES (fruit-specific)
+# -----------------------------
+cls: 1
+box: 7.5
+dfl: 1.5
+iou: 0.25
+
+patience: 100
+
+# -----------------------------
+# AUGMENTATION (stronger)
+# -----------------------------
+augment: True
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+fliplr: 0.5
+translate: 0.1
+scale: 0.5
+degrees: 0.0
+shear: 0.0
+perspective: 0.0
+erasing: 0.4
+
+mosaic: 1.0
+mixup: 0.0
+copy_paste: 0.0
+
+val: True
+plots: True
+device: 0
+workers: 8

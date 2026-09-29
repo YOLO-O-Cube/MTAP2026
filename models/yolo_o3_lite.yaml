@@ -1,0 +1,53 @@
+# YOLO-O³: Orange Orchard–Optimized YOLO (derived from YOLOv8)
+
+nc: 3  # flower, green orange, orange
+
+scales:
+  o3: [0.33, 0.25, 1024]  # YOLOv8n-scale for edge efficiency
+
+# ---------------- BACKBONE ----------------
+backbone:
+  # Depthwise-separable stem (YOLO-O³)
+  - [-1, 1, DWConv, [64, 3, 2]]     # 0 - P1/2
+  - [-1, 1, Conv,   [128, 3, 2]]    # 1 - P2/4
+  - [-1, 3, C2f,    [128, True]]    # 2
+
+  - [-1, 1, Conv,   [256, 3, 2]]    # 3 - P3/8
+  - [-1, 6, C2f,    [256, True]]    # 4
+
+  - [-1, 1, Conv,   [512, 3, 2]]    # 5 - P4/16
+  - [-1, 6, C2f,    [512, True]]    # 6
+
+  - [-1, 1, Conv,   [1024, 3, 2]]   # 7 - P5/32
+  - [-1, 3, C2f,    [1024, True]]   # 8
+  - [-1, 1, SPPF,   [1024, 5]]      # 9
+
+# ---------------- NECK (Light PAN/FPN, weighted via 1×1 conv) ----------------
+head:
+  # P5 → P4
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]     # 10
+  - [[-1, 6], 1, Concat, [1]]                      # fuse P5↑ + P4
+  - [-1, 1, Conv, [512, 1, 1]]                     # learned weighted fusion
+  - [-1, 3, C2f, [512]]                            # 13
+
+  # P4 → P3
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]     # 14
+  - [[-1, 4], 1, Concat, [1]]                      # fuse P4↑ + P3
+  - [-1, 1, Conv, [256, 1, 1]]                     # learned weighted fusion
+  - [-1, 3, C2f, [256]]                            # 17 (P3 / flowers)
+
+  # Downscale back to P4
+  - [-1, 1, Conv, [256, 3, 2]]                     # 18
+  - [[-1, 13], 1, Concat, [1]]
+  - [-1, 1, Conv, [512, 1, 1]]
+  - [-1, 3, C2f, [512]]                            # 21 (P4 / green fruit)
+
+  # Downscale back to P5
+  - [-1, 1, Conv, [512, 3, 2]]                     # 22
+  - [[-1, 9], 1, Concat, [1]]
+  - [-1, 1, Conv, [1024, 1, 1]]
+  - [-1, 3, C2f, [1024]]                           # 25 (P5 / large)
+
+  # Detect head (anchor-free, decoupled)
+  - [[17, 21, 25], 1, Detect, [nc]]                # Detect(P3, P4, P5)
+

@@ -1,0 +1,64 @@
+# YOLO-O³: Orange Orchard–Optimized YOLOv8n
+# Derived from YOLOv8n with lightweight backbone & head
+# yolo detect train model=models/yolo_o3.yaml data=configs/orangefruitnet.yaml cfg=configs/yolo_o3_train.yaml
+
+
+# =========================================================
+# YOLO-O³-v2 : Lightweight Fruit Detection (Edge Optimized)
+# nc = 3 (task-specific fruit classes)
+# =========================================================
+
+nc: 3
+scales:
+  n: [0.33, 0.50, 512]
+
+# ---------------------------------------------------------
+# Backbone (DWConv-based, efficient)
+# ---------------------------------------------------------
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, DWConv, [64, 3, 2]]        # 0-P1/2
+  - [-1, 1, DWConv, [128, 3, 2]]       # 1-P2/4
+  - [-1, 2, C2f, [128, True]]          # shallow
+
+  - [-1, 1, DWConv, [256, 3, 2]]       # 3-P3/8
+  - [-1, 3, C2f, [256, True]]          # ↑ P3 depth (small fruits)
+
+  - [-1, 1, DWConv, [512, 3, 2]]       # 5-P4/16
+  - [-1, 3, C2f, [512, True]]          # ↑ P4 depth
+
+  - [-1, 1, DWConv, [512, 3, 2]]       # 7-P5/32
+  - [-1, 1, C2f, [512, True]]           # ↓ P5 depth (semantic cap)
+
+  - [-1, 1, SPPF, [512, 5]]             # global context
+
+# ---------------------------------------------------------
+# Neck (Hybrid: Conv for fusion quality)
+# ---------------------------------------------------------
+neck:
+  # P5 → P4
+  - [-1, 1, Conv, [256, 1, 1]]
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 6], 1, Concat, [1]]
+  - [-1, 3, C2f, [256, False]]          # Conv-based fusion
+
+  # P4 → P3
+  - [-1, 1, Conv, [128, 1, 1]]
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 4], 1, Concat, [1]]
+  - [-1, 3, C2f, [128, False]]          # P3 emphasized
+
+  # Down path
+  - [-1, 1, Conv, [128, 3, 2]]
+  - [[-1, 12], 1, Concat, [1]]
+  - [-1, 3, C2f, [256, False]]
+
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [[-1, 9], 1, Concat, [1]]
+  - [-1, 1, C2f, [512, False]]           # keep P5 shallow
+
+# ---------------------------------------------------------
+# Head (Standard Detect – edge safe)
+# ---------------------------------------------------------
+head:
+  - [[15, 18, 21], 1, Detect, [nc]]
