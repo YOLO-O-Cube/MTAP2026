@@ -1,0 +1,93 @@
+pair_id,candidate_image_a,candidate_image_b,dhash_hamming_distance,ssim_score,manual_review_decision,notes
+DUP_001,CAND_0001.jpg,CAND_0002.jpg,0,0.9851,Removed,Exact duplicate
+DUP_002,CAND_0003.jpg,CAND_0004.jpg,0,0.959,Removed,Exact duplicate
+DUP_003,CAND_0005.jpg,CAND_0006.jpg,2,0.9875,Removed,Near-identical crop / burst frame
+DUP_004,CAND_0007.jpg,CAND_0008.jpg,1,0.9493,Removed,Near-identical crop / burst frame
+DUP_005,CAND_0009.jpg,CAND_0010.jpg,2,0.9242,Removed,Near-identical crop / burst frame
+DUP_006,CAND_0011.jpg,CAND_0012.jpg,0,0.9799,Removed,Exact duplicate
+DUP_007,CAND_0013.jpg,CAND_0014.jpg,2,0.8961,Removed,Near-identical crop / burst frame
+DUP_008,CAND_0015.jpg,CAND_0016.jpg,1,0.9774,Removed,Near-identical crop / burst frame
+DUP_009,CAND_0017.jpg,CAND_0018.jpg,1,0.9367,Removed,Near-identical crop / burst frame
+DUP_010,CAND_0019.jpg,CAND_0020.jpg,3,0.8963,Removed,Near-identical crop / burst frame
+DUP_011,CAND_0021.jpg,CAND_0022.jpg,3,0.9247,Removed,Near-identical crop / burst frame
+DUP_012,CAND_0023.jpg,CAND_0024.jpg,3,0.9201,Removed,Near-identical crop / burst frame
+DUP_013,CAND_0025.jpg,CAND_0026.jpg,1,0.9167,Removed,Near-identical crop / burst frame
+DUP_014,CAND_0027.jpg,CAND_0028.jpg,0,0.9464,Removed,Exact duplicate
+DUP_015,CAND_0029.jpg,CAND_0030.jpg,3,0.9834,Removed,Near-identical crop / burst frame
+DUP_016,CAND_0031.jpg,CAND_0032.jpg,3,0.9556,Removed,Near-identical crop / burst frame
+DUP_017,CAND_0033.jpg,CAND_0034.jpg,0,0.9364,Removed,Exact duplicate
+DUP_018,CAND_0035.jpg,CAND_0036.jpg,3,0.9401,Removed,Near-identical crop / burst frame
+DUP_019,CAND_0037.jpg,CAND_0038.jpg,1,0.9552,Removed,Near-identical crop / burst frame
+DUP_020,CAND_0039.jpg,CAND_0040.jpg,3,0.9777,Removed,Near-identical crop / burst frame
+DUP_021,CAND_0041.jpg,CAND_0042.jpg,3,0.9656,Removed,Near-identical crop / burst frame
+DUP_022,CAND_0043.jpg,CAND_0044.jpg,2,0.9863,Removed,Near-identical crop / burst frame
+DUP_023,CAND_0045.jpg,CAND_0046.jpg,2,0.959,Removed,Near-identical crop / burst frame
+DUP_024,CAND_0047.jpg,CAND_0048.jpg,2,0.9747,Removed,Near-identical crop / burst frame
+DUP_025,CAND_0049.jpg,CAND_0050.jpg,1,0.9681,Removed,Near-identical crop / burst frame
+DUP_026,CAND_0051.jpg,CAND_0052.jpg,1,0.9624,Removed,Near-identical crop / burst frame
+DUP_027,CAND_0053.jpg,CAND_0054.jpg,2,0.8972,Removed,Near-identical crop / burst frame
+DUP_028,CAND_0055.jpg,CAND_0056.jpg,0,0.9457,Removed,Exact duplicate
+DUP_029,CAND_0057.jpg,CAND_0058.jpg,1,0.9591,Removed,Near-identical crop / burst frame
+DUP_030,CAND_0059.jpg,CAND_0060.jpg,0,0.9293,Removed,Exact duplicate
+DUP_031,CAND_0061.jpg,CAND_0062.jpg,1,0.9266,Removed,Near-identical crop / burst frame
+DUP_032,CAND_0063.jpg,CAND_0064.jpg,0,0.9021,Removed,Exact duplicate
+DUP_033,CAND_0065.jpg,CAND_0066.jpg,2,0.9119,Removed,Near-identical crop / burst frame
+DUP_034,CAND_0067.jpg,CAND_0068.jpg,0,0.9232,Removed,Exact duplicate
+DUP_035,CAND_0069.jpg,CAND_0070.jpg,3,0.9368,Removed,Near-identical crop / burst frame
+DUP_036,CAND_0071.jpg,CAND_0072.jpg,2,0.9368,Removed,Near-identical crop / burst frame
+DUP_037,CAND_0073.jpg,CAND_0074.jpg,3,0.9722,Removed,Near-identical crop / burst frame
+DUP_038,CAND_0075.jpg,CAND_0076.jpg,1,0.9217,Removed,Near-identical crop / burst frame
+DUP_039,CAND_0077.jpg,CAND_0078.jpg,1,0.9769,Removed,Near-identical crop / burst frame
+DUP_040,CAND_0079.jpg,CAND_0080.jpg,1,0.9538,Removed,Near-identical crop / burst frame
+DUP_041,CAND_0081.jpg,CAND_0082.jpg,1,0.9741,Removed,Near-identical crop / burst frame
+DUP_042,CAND_0083.jpg,CAND_0084.jpg,2,0.8975,Removed,Near-identical crop / burst frame
+DUP_043,CAND_0085.jpg,CAND_0086.jpg,3,0.9354,Removed,Near-identical crop / burst frame
+DUP_044,CAND_0087.jpg,CAND_0088.jpg,2,0.9066,Removed,Near-identical crop / burst frame
+DUP_045,CAND_0089.jpg,CAND_0090.jpg,0,0.9584,Removed,Exact duplicate
+DUP_046,CAND_0091.jpg,CAND_0092.jpg,0,0.9444,Removed,Exact duplicate
+DUP_047,CAND_0093.jpg,CAND_0094.jpg,0,0.9666,Removed,Exact duplicate
+DUP_048,CAND_0095.jpg,CAND_0096.jpg,3,0.974,Removed,Near-identical crop / burst frame
+DUP_049,CAND_0097.jpg,CAND_0098.jpg,0,0.9678,Removed,Exact duplicate
+DUP_050,CAND_0099.jpg,CAND_0100.jpg,3,0.9712,Removed,Near-identical crop / burst frame
+DUP_051,CAND_0101.jpg,CAND_0102.jpg,1,0.9709,Removed,Near-identical crop / burst frame
+DUP_052,CAND_0103.jpg,CAND_0104.jpg,3,0.9609,Removed,Near-identical crop / burst frame
+DUP_053,CAND_0105.jpg,CAND_0106.jpg,2,0.9592,Removed,Near-identical crop / burst frame
+DUP_054,CAND_0107.jpg,CAND_0108.jpg,3,0.9224,Removed,Near-identical crop / burst frame
+DUP_055,CAND_0109.jpg,CAND_0110.jpg,1,0.938,Removed,Near-identical crop / burst frame
+DUP_056,CAND_0111.jpg,CAND_0112.jpg,2,0.9182,Removed,Near-identical crop / burst frame
+DUP_057,CAND_0113.jpg,CAND_0114.jpg,1,0.8961,Removed,Near-identical crop / burst frame
+DUP_058,CAND_0115.jpg,CAND_0116.jpg,3,0.8928,Removed,Near-identical crop / burst frame
+DUP_059,CAND_0117.jpg,CAND_0118.jpg,1,0.989,Removed,Near-identical crop / burst frame
+DUP_060,CAND_0119.jpg,CAND_0120.jpg,2,0.9787,Removed,Near-identical crop / burst frame
+DUP_061,CAND_0121.jpg,CAND_0122.jpg,1,0.951,Removed,Near-identical crop / burst frame
+DUP_062,CAND_0123.jpg,CAND_0124.jpg,3,0.9135,Removed,Near-identical crop / burst frame
+DUP_063,CAND_0125.jpg,CAND_0126.jpg,2,0.9574,Removed,Near-identical crop / burst frame
+DUP_064,CAND_0127.jpg,CAND_0128.jpg,3,0.9756,Removed,Near-identical crop / burst frame
+DUP_065,CAND_0129.jpg,CAND_0130.jpg,2,0.8928,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_066,CAND_0131.jpg,CAND_0132.jpg,3,0.8986,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_067,CAND_0133.jpg,CAND_0134.jpg,3,0.9102,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_068,CAND_0135.jpg,CAND_0136.jpg,2,0.8976,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_069,CAND_0137.jpg,CAND_0138.jpg,3,0.8826,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_070,CAND_0139.jpg,CAND_0140.jpg,3,0.9009,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_071,CAND_0141.jpg,CAND_0142.jpg,2,0.9004,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_072,CAND_0143.jpg,CAND_0144.jpg,3,0.8961,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_073,CAND_0145.jpg,CAND_0146.jpg,3,0.8834,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_074,CAND_0147.jpg,CAND_0148.jpg,3,0.9044,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_075,CAND_0149.jpg,CAND_0150.jpg,3,0.9048,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_076,CAND_0151.jpg,CAND_0152.jpg,3,0.8842,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_077,CAND_0153.jpg,CAND_0154.jpg,3,0.89,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_078,CAND_0155.jpg,CAND_0156.jpg,2,0.8992,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_079,CAND_0157.jpg,CAND_0158.jpg,2,0.8869,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_080,CAND_0159.jpg,CAND_0160.jpg,3,0.9129,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_081,CAND_0161.jpg,CAND_0162.jpg,3,0.8895,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_082,CAND_0163.jpg,CAND_0164.jpg,3,0.881,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_083,CAND_0165.jpg,CAND_0166.jpg,3,0.8929,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_084,CAND_0167.jpg,CAND_0168.jpg,2,0.8961,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_085,CAND_0169.jpg,CAND_0170.jpg,3,0.8903,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_086,CAND_0171.jpg,CAND_0172.jpg,3,0.8883,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_087,CAND_0173.jpg,CAND_0174.jpg,3,0.9133,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_088,CAND_0175.jpg,CAND_0176.jpg,2,0.8995,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_089,CAND_0177.jpg,CAND_0178.jpg,3,0.9058,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_090,CAND_0179.jpg,CAND_0180.jpg,2,0.9002,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_091,CAND_0181.jpg,CAND_0182.jpg,2,0.8909,Retained,Distinct viewing angle / adjacent tree canopy verified manually
+DUP_092,CAND_0183.jpg,CAND_0184.jpg,2,0.9068,Retained,Distinct viewing angle / adjacent tree canopy verified manually
